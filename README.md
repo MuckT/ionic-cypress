@@ -35,7 +35,7 @@ If you'd like to run your tests headless, in CI, or record the results to the Cy
 
 #### Notes
 
-* The lighthouse will only work correctly in Chrome, otherwise they will pass incorrectly.
+* The Lighthouse & Pa11y tests will only work correctly in Chrome, otherwise they will pass incorrectly.
 
 ### Learn More
 
