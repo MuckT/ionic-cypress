@@ -34,7 +34,14 @@ describe("Tutorial Path", () => {
       openMode: 0
     }
   }, () => {
-    cy.pa11y();
+    cy.pa11y({
+      viewport: {
+        width: 320,
+        height: 568,
+        deviceScaleFactor: 2,
+        isMobile: true
+      }
+    });
   });
 
   describe('\'Welcome To\' Page', () => {
