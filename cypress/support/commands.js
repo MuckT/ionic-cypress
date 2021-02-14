@@ -24,7 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 import { Storage } from '@ionic/storage';
-
+import "cypress-audit/commands";
 const storage = new Storage;
 
 Cypress.Commands.add('enableTutorial', () => {
@@ -41,18 +41,4 @@ Cypress.Commands.add('disableTutorial', () => {
           storage.set('ion_did_tutorial', true)
         },
       })
-})
-
-Cypress.Commands.add('swipeLeft', () => {
-    cy.get('.swiper-slide-active')
-    .trigger('mousedown', {position: "right"})
-    .trigger('mousemove', {clientX: 100, clientY: 275})
-    .trigger('mouseup', {force: true})
-})
-
-Cypress.Commands.add('swipeRight', () => {
-    cy.get('.swiper-slide-active')
-    .trigger('mousedown', {position: "left"})
-    .trigger('mousemove', {clientX: 300, clientY: 275})
-    .trigger('mouseup', {force: true})
 })
