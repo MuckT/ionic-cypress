@@ -1,21 +1,13 @@
 /// <reference types="cypress" />
 
-describe("critical path", () => {
-  beforeEach(() => {
-    cy.viewport("iphone-5");
-  });
-
-  it.only("swipes through tutorial", () => {
+describe("Swipe Tests", () => {
+  const slider = '.swiper-slide-active';
+  it("Swipes Through Tutorial", () => {
     //pauses added for demonstration purposes, can be removed
-
     cy.enableTutorial();
-    cy.wait(1000);
-    cy.swipeLeft();
-    cy.wait(1000);
-    cy.swipeLeft();
-    cy.wait(1000);
-    cy.swipeLeft();
-    cy.wait(1000);
+    cy.get(slider).realSwipe("toLeft")
+    cy.get(slider).realSwipe("toLeft")
+    cy.get(slider).realSwipe("toLeft")
     cy.contains("Continue").click();
   });
 });
